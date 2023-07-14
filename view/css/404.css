@@ -7,8 +7,8 @@ html {
 }
 
 body{
-    font-family: 'Jost', sans-serif;
-    color: #6d44b8;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #7F44C7;
     margin: 0;
 }
 
@@ -32,6 +32,6 @@ body{
 }
 
 @keyframes type{
-	  from{box-shadow: inset -3px 0px 0px #888;}
+	  from{box-shadow: inset -3px 0px 0px #624E7A;}
 	  to{box-shadow: inset -3px 0px 0px transparent;}
 }

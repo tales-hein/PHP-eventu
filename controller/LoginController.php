@@ -1,3 +1,9 @@
 <?php
 
-require 'view/login/login.php';
+class LoginController {
+    
+    public function index() {
+        require 'view/login/login.php';
+    }
+    
+}
