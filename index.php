@@ -1,11 +1,9 @@
 <?php
+session_start();
 
 require 'functions.php';
-require 'library/Database.php';
-require 'library/Router.php';
-
-//$dbConfigs = require('config.php'); 
-//$db = new Database($dbConfigs['dsn'], $dbConfigs['user'], $dbConfigs['senhadb']);
+require 'core/library/Database.php';
+require 'core/library/Router.php';
 
 $url = $_SERVER['REQUEST_URI'];
 $router = new Router();

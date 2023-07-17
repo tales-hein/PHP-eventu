@@ -3,7 +3,7 @@
 class DashboardController {
     
     public function index() {
-        require 'view/dashboard/dashboard.php';
+        require 'core/view/script/dashboard/dashboard.php';
     }
     
 }

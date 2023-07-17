@@ -25,7 +25,7 @@ class Router {
     }
 
     private function routeTo($controllerPath) {
-        $controller = str_replace('.php', '', explode('/', $controllerPath)[1]);
+        $controller = str_replace('.php', '', explode('/', $controllerPath)[2]);
         $action = $this->parsedRoute['path'][2];
         require $controllerPath;
         $controllerInstance = new $controller;
@@ -41,11 +41,11 @@ class Router {
             return;
         }
         parse_str($this->parsedRoute['query'], $actionParams);
-        $controllerInstance->$action($actionParams[0]);
+        $controllerInstance->$action(implode(',', $actionParams));
     }
     
-    private function abort($codigo = 404) {
-        require "view/erro/{$codigo}.php";
+    public function abort($codigo = 404) {
+        require "core/view/script/erro/{$codigo}.php";
         die();
     }
 }

@@ -3,18 +3,18 @@
 function findRoutes() {
     $routes = [];
 
-    $controllers = scandir('controller');
+    $controllers = scandir('core/controller/');
     
     foreach ($controllers as $controller) {
         $controllerRef = strtolower(str_replace('Controller.php', '', $controller));
         $key = '/' . $controllerRef;
         if($controllerRef == 'login') {
-            $routes['/'] = 'controller/LoginController.php';    
+            $routes['/'] = 'core/controller/LoginController.php';    
         }else {
-            $routes[$key] = 'controller/' . $controller;
+            $routes[$key] = 'core/controller/' . $controller;
         } 
     }
-    
+    // var_dump($routes);exit(0);
     return $routes;
 }
 

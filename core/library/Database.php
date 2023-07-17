@@ -4,10 +4,12 @@ class Database {
     
     public $conexao;
 
-    public function __construct($config, $user, $senhadb) {
-        $data_source_name = "mysql:" . http_build_query($config, '', ';');
+    public function __construct() {
+        $config = require('config.php');
 
-        $this->conexao = new PDO($data_source_name, $user, $senhadb, [
+        $data_source_name = "mysql:" . http_build_query($config['dsn'], '', ';');
+
+        $this->conexao = new PDO($data_source_name, $config['user'], $config['senhadb'], [
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         ]);
     }
